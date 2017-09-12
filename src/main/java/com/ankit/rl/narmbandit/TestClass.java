@@ -1,4 +1,4 @@
-package com.ankit.rl;
+package com.ankit.rl.narmbandit;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;

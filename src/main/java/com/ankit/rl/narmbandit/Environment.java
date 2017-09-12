@@ -1,4 +1,4 @@
-package com.ankit.rl;
+package com.ankit.rl.narmbandit;
 
 import org.apache.commons.math3.distribution.NormalDistribution;
 
@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.ankit.rl.Utils.getMaxValueIndex;
+import static com.ankit.rl.narmbandit.Utils.getMaxValueIndex;
 
 public class Environment
 {

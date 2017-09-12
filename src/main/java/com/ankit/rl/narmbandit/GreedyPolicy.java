@@ -1,6 +1,6 @@
-package com.ankit.rl;
+package com.ankit.rl.narmbandit;
 
-import static com.ankit.rl.Utils.getMaxValueIndex;
+import static com.ankit.rl.narmbandit.Utils.getMaxValueIndex;
 
 public class GreedyPolicy implements StatelessPolicy
 {

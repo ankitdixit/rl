@@ -1,4 +1,4 @@
-package com.ankit.rl;
+package com.ankit.rl.narmbandit;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -12,7 +12,6 @@ import org.jfree.ui.RefineryUtilities;
 import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ListIterator;
 
 public class LineChartPlotter extends ApplicationFrame
 {

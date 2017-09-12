@@ -1,4 +1,4 @@
-package com.ankit.rl;
+package com.ankit.rl.narmbandit;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.ankit.rl.LineChartPlotter.printChart;
+import static com.ankit.rl.narmbandit.LineChartPlotter.printChart;
 
 public class Setup
 {
