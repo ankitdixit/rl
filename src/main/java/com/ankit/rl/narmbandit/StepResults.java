@@ -1,5 +1,6 @@
 package com.ankit.rl.narmbandit;
 
+// This consists of result of a particular step. The machine chosen and the reward received by selecting it.
 public class StepResults
 {
     final int machineChosen;

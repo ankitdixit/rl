@@ -9,6 +9,10 @@ public class AgentResult
     ArrayList<Boolean> isOptimal;
     int optimalMachineIndex;
 
+    /**
+     * This creates a Result class for the agent and is updated after each step.
+     * @param optimalMachineIndex
+     */
     public AgentResult(int optimalMachineIndex)
     {
         this.optimalMachineIndex = optimalMachineIndex;
@@ -18,7 +22,9 @@ public class AgentResult
 
     public void addStepResults(StepResults stepResults)
     {
+        // Save all the rewards
         rewards.add(stepResults.getReward());
+        // If the reward is from the chose optical
         isOptimal.add(optimalMachineIndex == stepResults.getChosenMachine()?true:false);
     }
 
