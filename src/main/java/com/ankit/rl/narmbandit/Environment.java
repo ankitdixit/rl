@@ -31,6 +31,7 @@ public class Environment
 
     private SlotMachine createSlotMachine()
     {
+        // Create a new slot machine, whose mean is from a normal distribution and standard deviation is 1.
         return new SlotMachine(new NormalDistribution(normalDistribution.sample(), 1));
     }
 
