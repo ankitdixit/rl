@@ -28,9 +28,9 @@ public class Setup
              * Adding different type of agents, with different policy for selecting different machines given a state.
              */
            // agents.add(new Agent(environment, new GreedyPolicy(), NO_OF_MACHINES));
-            agents.add(new Agent(environment, new EpsillionGreedy(0.01), NO_OF_MACHINES));
-//            agents.add(new Agent(environment, new EpsillionGreedy(0.05), NO_OF_MACHINES));
-//            agents.add(new Agent(environment, new EpsillionGreedy(0.1), NO_OF_MACHINES));
+            agents.add(new Agent(environment, new EpsilonGreedy(0.01), NO_OF_MACHINES));
+//            agents.add(new Agent(environment, new EpsilonGreedy(0.05), NO_OF_MACHINES));
+//            agents.add(new Agent(environment, new EpsilonGreedy(0.1), NO_OF_MACHINES));
 //            agents.add(new Agent(environment, new SoftMaxPolicy(0.2), NO_OF_MACHINES));
 
             /**

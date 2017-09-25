@@ -5,11 +5,11 @@ import static com.ankit.rl.narmbandit.Utils.getMaxValueIndex;
 /**
  * This follows the greedy policy with a scope to explore from other machines with a probability of epsilon
  */
-public class EpsillionGreedy implements StatelessPolicy
+public class EpsilonGreedy implements StatelessPolicy
 {
     final double epsilon;
 
-    public EpsillionGreedy(double epsilon)
+    public EpsilonGreedy(double epsilon)
     {
         this.epsilon = epsilon;
     }
