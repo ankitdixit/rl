@@ -10,9 +10,9 @@ import static com.ankit.rl.narmbandit.LineChartPlotter.printChart;
 
 public class Setup
 {
-    public static final int NO_OF_STEPS_PER_EXPERIMENT = 1000;
-    public static final int NO_OF_EXPERIMENTS = 10000;
-    public static final int NO_OF_MACHINES = 10;
+    public static final int NO_OF_STEPS_PER_EXPERIMENT = 100;
+    public static final int NO_OF_EXPERIMENTS = 100;
+    public static final int NO_OF_MACHINES = 2;
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
         // Design can be improved, need not initialize
@@ -23,10 +23,19 @@ public class Setup
         for(int experimentNumber=0; experimentNumber<NO_OF_EXPERIMENTS; experimentNumber++) {
             Environment environment = new Environment(NO_OF_MACHINES);
             List<Agent> agents = new ArrayList<>();
-            /*agents.add(new Agent(environment, new GreedyPolicy(), NO_OF_MACHINES));agents.add(new Agent(environment, new EpsillionGreedy(0.01), NO_OF_MACHINES));
-            agents.add(new Agent(environment, new EpsillionGreedy(0.05), NO_OF_MACHINES));
-            agents.add(new Agent(environment, new EpsillionGreedy(0.1), NO_OF_MACHINES));*/
-            agents.add(new Agent(environment, new SoftMaxPolicy(0.2), NO_OF_MACHINES));
+
+            /**
+             * Adding different type of agents, with different policy for selecting different machines given a state.
+             */
+           // agents.add(new Agent(environment, new GreedyPolicy(), NO_OF_MACHINES));
+            agents.add(new Agent(environment, new EpsilonGreedy(0.01), NO_OF_MACHINES));
+//            agents.add(new Agent(environment, new EpsilonGreedy(0.05), NO_OF_MACHINES));
+//            agents.add(new Agent(environment, new EpsilonGreedy(0.1), NO_OF_MACHINES));
+//            agents.add(new Agent(environment, new SoftMaxPolicy(0.2), NO_OF_MACHINES));
+
+            /**
+             * Create an experiment with the Agents specified and the number of steps which they have to take.
+             */
             Experiment experiment = new Experiment(environment, agents, NO_OF_STEPS_PER_EXPERIMENT);
             Map<Agent, AgentResult> experimentResult = experiment.conductExperiment();
 
@@ -72,7 +81,7 @@ public class Setup
             }
         }
         long endTime = System.currentTimeMillis();
-        System.out.println("Took "+(endTime - startTime) + " ns");
+        System.out.println("Time taken "+(endTime - startTime) + " ns");
 
         List<PolicyPlotterInput> inputs = new ArrayList<>();
         for(String policyName : mapAgentToAverageRewards.keySet())
